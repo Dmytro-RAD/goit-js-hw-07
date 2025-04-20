@@ -1,49 +1,18 @@
-// Задача 3. Конструктор рядків
+// Завдання 3
 
-// Напиши клас StringBuilder, який приймає один параметр initialValue — довільний рядок, який записується у приватну властивість value об'єкта, що створюється.
+// Напиши скрипт, який під час набору тексту в інпуті input#name-input (подія input) підставляє його поточне значення в span#name-output як ім’я для привітання. Обов’язково очищай значення в інпуті по краях від пробілів . Якщо інпут порожній або містить лише пробіли, то замість імені у спан має підставлятися рядок "Anonymous".
 
-// Оголоси наступні методи класу:
+//===================================================================//
+const userNameElem = document.querySelector('#name-input');
+const output = document.querySelector("#name-output");
 
-// getValue() — повертає поточне значення приватної властивості value.
-// padEnd(str) — отримує параметр str (рядок) і додає його в кінець значення приватної властивості value об'єкта, який викликає цей метод.
-// padStart(str) — отримує параметр str (рядок) і додає його на початок значення приватної властивості value об'єкта, який викликає цей метод.
-// padBoth(str) — отримує параметр str (рядок) і додає його на початок і в кінець значення приватної властивості value об'єкта, який викликає цей метод.
+userNameElem.addEventListener('input', handleUserNameInput);
 
-//========================================================================//
-class StringBuilder{
-    #value
-
-    constructor(initialValue){
-        this.#value = initialValue;
+function handleUserNameInput(e){
+    const userValue = e.target.value.trim();
+    if (userValue !== "") {
+        output.textContent = userValue;
+    } else {
+        output.textContent = 'Anonymous';
+    }
 }
-
-getValue(){
-    return this.#value;
-}
-
-padStart(str){
-    this.#value = `${str}${this.#value}`;
-}
-
-padEnd(str){
-    this.#value = `${this.#value}${str}`;
-
-}
-
-padBoth(str){
-    this.#value = `${str}${this.#value}${str}`;
-}
-}
-//========================================================================//
-
-const builder = new StringBuilder(".");
-console.log(builder.getValue()); // "."
-
-builder.padStart("^");
-console.log(builder.getValue()); // "^."
-
-builder.padEnd("^");
-console.log(builder.getValue()); // "^.^"
-
-builder.padBoth("=");
-console.log(builder.getValue()); // "=^.^="
