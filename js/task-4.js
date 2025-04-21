@@ -13,14 +13,15 @@ const formElem = document.querySelector('.js-form');
 formElem.addEventListener('submit', (e) => {
     e.preventDefault();
 
-        const emailElem = document.querySelector('#email');
-        const passwordElem = document.querySelector('#password');
+        const validPass = e.target.elements.password.value.trim();
+        const validEmail = e.target.elements.email.value.trim();
+
         const data = {
-            userEmail: e.target.elements.email.value.trim(),
-            userPassword: e.target.elements.password.value.trim()
+            userEmail: validEmail,
+            userPassword: validPass
         };
 
-        if (emailElem === "" || passwordElem === "") {
+        if (validPass === "" || validEmail === "") {
             alert("All form fields must be filled in");
             return;
         }

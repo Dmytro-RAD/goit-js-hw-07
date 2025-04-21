@@ -45,12 +45,16 @@ const galleryElem = document.querySelector('.gallery');
 const elems = [];
 
 for (const image of images) {
-    const elem = document.createElement('img');
-    elem.setAttribute('src', image.url);
-    elem.setAttribute('alt', image.alt);
-    elem.classList.add('gallery');
+    const liItem = document.createElement('li');
+    const imgElem = document.createElement('img');
+    
+    imgElem.setAttribute('src', image.url);
+    imgElem.setAttribute('alt', image.alt);
+    imgElem.classList.add('gallery');
 
-    elems.push(elem);
+    liItem.appendChild(imgElem);
+    elems.push(liItem);
 };
 
 galleryElem.append(...elems);
+console.log(elems);
