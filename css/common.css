@@ -12,7 +12,7 @@ body {
   line-height: 1.5;
 }
 
-ul, li, h1, h2, h3 {
+ul, li, h1, h2, h3, p {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -87,6 +87,7 @@ margin-bottom: 16px;
   justify-content: center;
   width: 400px;
 }
+
 /* ========== TASK #3 =========== */
 .title {
 font-weight: 600;
@@ -105,9 +106,9 @@ color: #2e2f42;
 width: 360px;
 height: 40px;
 }
+
 /* ========== TASK #4 =========== */
 .login-form {
-  
   border-radius: 8px;
   padding: 24px;
   width: 408px;
@@ -150,5 +151,35 @@ letter-spacing: 0.04em;
 color: #fff;
 margin-top: 16px;
 }
-/* ========== TASK #5 =========== */
 
+/* ========== TASK #5 =========== */
+.widget{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 100px 88px;
+  width: 345px;
+  height: 280px;
+  background-color: #fff;
+}
+
+.change-color{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 148px;
+  height: 40px;
+  background: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+}
